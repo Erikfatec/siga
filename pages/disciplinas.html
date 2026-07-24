@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#5D6B7C">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>SIGA | Disciplinas</title>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+
+    <header class="w-full bg-[#5D6B7C] px-4 py-2 flex items-center justify-between">
+        <div class="flex items-center gap-x-2">
+          <img src="../assets/cpssiga.png" alt="logo" class="h-[88px] w-auto" />
+        </div>
+        <div class="flex items-center gap-x-2">
+          <i class="fa-regular fa-bell text-white text-[20px]"></i>
+          <p class="text-white">Olá, VICTOR</p>
+          <img src="../assets/victor.ribeiro.jpeg" alt="Avatar" class="w-8 h-8 rounded-full object-cover" />
+        </div>
+    </header>
+
+    <div class="bg-[#E7E3DA] max-w-[450px] mx-auto w-full px-4 py-3 flex items-center gap-3">
+        <a href="home.html" target="_self" class="text-[#3B4A57] flex items-center gap-1 text-sm">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span>Voltar</span>
+        </a>
+        <div>
+            <h1 class="text-lg font-bold text-[#2A2A2A] leading-tight">Disciplinas</h1>
+            <p class="text-xs text-[#6B6B6B]">Progresso no curso</p>
+        </div>
+    </div>
+
+    <main class="flex-1 max-w-[450px] mx-auto w-full px-4 py-5">
+
+        <div class="flex items-center gap-3 mb-5">
+            <i class="fa-solid fa-filter text-[#5D6B7C] text-sm"></i>
+            <select id="filtroStatus" class="flex-1 border border-gray-300 rounded-md px-3 py-2 text-sm text-[#333] bg-white outline-none focus:border-[#5D6B7C]">
+                <option value="todos">Todos os status</option>
+                <option value="aprovado">Aprovado</option>
+                <option value="cursando">Cursando</option>
+                <option value="reprovado">Reprovado</option>
+            </select>
+            <select id="filtroPeriodo" class="w-[110px] border border-gray-300 rounded-md px-3 py-2 text-sm text-[#333] bg-white outline-none focus:border-[#5D6B7C]">
+                <option value="todos">Período</option>
+                <option value="20251">2026/1</option>
+                <option value="20252">2026/2</option>
+            </select>
+        </div>
+
+        <div id="listaDisciplinas" class="space-y-4"></div>
+
+        <p id="vazio" class="hidden text-center text-sm text-[#6B6B6B] py-10">
+            Nenhuma disciplina encontrada para este filtro.
+        </p>
+
+    </main>
+
+    <footer class="bg-[#2A2A2A] max-w-[450px] mx-auto w-full h-[90px] flex items-center justify-around">
+        <div class="text-white flex flex-col items-center">
+            <a href="home.html" target="_self" class="flex flex-col items-center transition-all duration-200 hover:scale-105">
+                <i class="fa-solid fa-house text-white"></i>
+                <p>início</p>
+            </a>
+        </div>
+        <div class="text-white flex flex-col items-center">
+            <a href="curso.html" target="_self" class="flex flex-col items-center transition-all duration-200 hover:scale-105">
+                <i class="fa-solid fa-school text-white"></i>
+                <p>meu curso</p>
+            </a>
+        </div>
+        <div class="text-white flex flex-col items-center">
+            <a href="../index.html" target="_self" class="flex flex-col items-center transition-all duration-200 hover:scale-105">
+                <i class="fa-solid fa-right-from-bracket text-white"></i>
+                <p>sair</p>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Dados fictícios de disciplinas do curso de Gestão Empresarial
+        const disciplinas = [
+            {
+                codigo: "GEP101",
+                nome: "Fundamentos de Administração",
+                media: 0,
+                frequencia: 0,
+                semestre: 4,
+                periodo: "20251",
+                status: "cursando"
+            },
+            {
+                codigo: "GEP102",
+                nome: "Estatística Aplicada",
+                media: 0,
+                frequencia: 0,
+                semestre: 4,
+                periodo: "20251",
+                status: "cursando"
+            },
+            {
+                codigo: "GEP103",
+                nome: "Contabilidade Empresarial",
+                media: 0,
+                frequencia: 0,
+                semestre: 4,
+                periodo: "20251",
+                status: "cursando"
+            },
+            {
+                codigo: "GEP104",
+                nome: "Gestão de Pessoas",
+                media: 0,
+                frequencia: 0,
+                semestre: 4,
+                periodo: "20251",
+                status: "cursando"
+            },
+            {
+                codigo: "GEP201",
+                nome: "Marketing Estratégico",
+                media: 0,
+                frequencia: 0,
+                semestre: 4,
+                periodo: "20251",
+                status: "cursando"
+            },
+            {
+                codigo: "GEP202",
+                nome: "Logística Empresarial",
+                media: 0,
+                frequencia: 0,
+                semestre: 4,
+                periodo: "20251",
+                status: "cursando"
+            },
+            {
+                codigo: "GEP203",
+                nome: "Empreendedorismo e Inovação",
+                media: 0,
+                frequencia: 0,
+                semestre: 4,
+                periodo: "20251",
+                status: "cursando"
+            }
+        ];
+
+        const statusConfig = {
+            aprovado:  { label: "Aprovado por Nota e Frequência", cor: "text-emerald-600", bg: "bg-[#4A5864]" },
+            cursando:  { label: "Em andamento", cor: "text-amber-600", bg: "bg-[#5D6B7C]" },
+            reprovado: { label: "Reprovado", cor: "text-red-600", bg: "bg-[#7C4A4A]" }
+        };
+
+        function renderDisciplinas() {
+            const status = document.getElementById("filtroStatus").value;
+            const periodo = document.getElementById("filtroPeriodo").value;
+            const lista = document.getElementById("listaDisciplinas");
+            const vazio = document.getElementById("vazio");
+
+            const filtradas = disciplinas.filter(d => {
+                const statusOk = status === "todos" || d.status === status;
+                const periodoOk = periodo === "todos" || d.periodo === periodo;
+                return statusOk && periodoOk;
+            });
+
+            lista.innerHTML = "";
+
+            if (filtradas.length === 0) {
+                vazio.classList.remove("hidden");
+                return;
+            }
+            vazio.classList.add("hidden");
+
+            filtradas.forEach(d => {
+                const cfg = statusConfig[d.status];
+                const periodoLabel = d.periodo.slice(0, 4) + "/" + d.periodo.slice(4);
+
+                const card = document.createElement("div");
+                card.className = "border border-[#ccc] rounded-lg overflow-hidden bg-white";
+                card.innerHTML = `
+                    <div class="${cfg.bg} text-white px-4 py-4">
+                        <p class="text-xs opacity-80">${d.codigo}</p>
+                        <p class="font-bold text-base leading-snug">${d.nome}</p>
+                    </div>
+                    <div class="px-4 py-3 text-sm space-y-1.5">
+                        <div class="flex justify-between">
+                            <span class="text-[#6B6B6B]">média</span>
+                            <span class="font-bold text-[#2A2A2A]">${d.media !== null ? d.media.toFixed(1).replace(".", ",") : "—"}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-[#6B6B6B]">frequência</span>
+                            <span class="font-bold text-[#2A2A2A]">${d.frequencia.toFixed(1).replace(".", ",")}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-[#6B6B6B]">semestre</span>
+                            <span class="font-bold text-[#2A2A2A]">${d.semestre}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-[#6B6B6B]">período</span>
+                            <span class="font-bold text-[#2A2A2A]">${periodoLabel}</span>
+                        </div>
+                        <div class="flex justify-between pt-1">
+                            <span class="text-[#6B6B6B]">status</span>
+                            <span class="font-bold ${cfg.cor}">${cfg.label}</span>
+                        </div>
+                    </div>
+                `;
+                lista.appendChild(card);
+            });
+        }
+
+        document.getElementById("filtroStatus").addEventListener("change", renderDisciplinas);
+        document.getElementById("filtroPeriodo").addEventListener("change", renderDisciplinas);
+
+        renderDisciplinas();
+    </script>
+</body>
+</html>
