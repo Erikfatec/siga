@@ -23,14 +23,26 @@
 
   <main class="flex-1 max-w-[450px] mx-auto px-4 py-6 space-y-4 flex-grow">
     <div class="grid grid-cols-3 gap-2">
-      <div class="bg-[#5D6B7C] text-white flex flex-col items-center justify-center p-3 rounded-lg">
-        <i class="fa-solid fa-chart-line text-xl mb-1"></i>
-        <p>Notas</p>
-      </div>
-      <div class="bg-[#5D6B7C] text-white flex flex-col items-center justify-center p-3 rounded-lg">
-        <i class="fa-solid fa-clipboard-check text-xl mb-1"></i>
-        <p>Faltas</p>
-      </div>
+      <a href="notas.html" target="_self" class="block">
+        <div class="bg-[#5D6B7C] text-white flex flex-col items-center justify-center p-3 rounded-lg
+                    transition-all duration-200 ease-out
+                    active:scale-95 active:opacity-80
+                    hover:scale-[1.03] hover:shadow-md
+                    cursor-pointer">
+          <i class="fa-solid fa-chart-line text-xl mb-1"></i>
+          <p>Notas</p>
+        </div>
+      </a>
+      <a href="faltas.html" target="_self" class="block">
+        <div class="bg-[#5D6B7C] text-white flex flex-col items-center justify-center p-3 rounded-lg
+                    transition-all duration-200 ease-out
+                    active:scale-95 active:opacity-80
+                    hover:scale-[1.03] hover:shadow-md
+                    cursor-pointer">
+          <i class="fa-solid fa-clipboard-check text-xl mb-1"></i>
+          <p>Faltas</p>
+        </div>
+      </a>
       <a href="disciplinas.html" target="_self" class="block">
         <div class="bg-[#5D6B7C] text-white flex flex-col items-center justify-center p-3 rounded-lg
                     transition-all duration-200 ease-out
@@ -41,10 +53,16 @@
           <p>Disciplinas</p>
         </div>
       </a>
-      <div class="bg-[#5D6B7C] text-white flex flex-col items-center justify-center p-3 rounded-lg col-span-1">
-        <i class="fa-solid fa-file-alt text-xl mb-1"></i>
-        <p>Histórico</p>
-      </div>
+      <a href="historico.html" target="_self" class="block col-span-1">
+        <div class="bg-[#5D6B7C] text-white flex flex-col items-center justify-center p-3 rounded-lg
+                    transition-all duration-200 ease-out
+                    active:scale-95 active:opacity-80
+                    hover:scale-[1.03] hover:shadow-md
+                    cursor-pointer">
+          <i class="fa-solid fa-file-alt text-xl mb-1"></i>
+          <p>Histórico</p>
+        </div>
+      </a>
     </div>
 
     <div class="bg-white border rounded-md p-4 text-sm space-y-1">

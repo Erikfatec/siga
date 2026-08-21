@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#5D6B7C">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>SIGA | Consulta notas</title>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+
+    <header class="w-full bg-[#5D6B7C] px-4 py-2 flex items-center justify-between">
+        <div class="flex items-center gap-x-2">
+          <img src="../assets/cpssiga.png" alt="logo" class="h-[88px] w-auto" />
+        </div>
+        <div class="flex items-center gap-x-2">
+          <i class="fa-regular fa-bell text-white text-[20px]"></i>
+          <p class="text-white">Olá, RICHARD</p>
+          <img src="../assets/ryan.jpeg" alt="Avatar" class="w-8 h-8 rounded-full object-cover" />
+        </div>
+    </header>
+
+    <div class="bg-[#E7E3DA] max-w-[450px] mx-auto w-full px-4 py-3 flex items-center gap-3">
+        <a href="home.html" target="_self" class="text-[#3B4A57] flex items-center gap-1 text-sm">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span>Voltar</span>
+        </a>
+        <div>
+            <h1 class="text-lg font-bold text-[#2A2A2A] leading-tight">Consulta notas</h1>
+            <p class="text-xs text-[#6B6B6B]">Consulta de notas do semestre</p>
+        </div>
+    </div>
+
+    <main class="flex-1 max-w-[450px] mx-auto w-full px-4 py-5">
+        <div id="listaNotas" class="space-y-4"></div>
+    </main>
+
+    <footer class="bg-[#2A2A2A] max-w-[450px] mx-auto w-full h-[90px] flex items-center justify-around">
+        <div class="text-white flex flex-col items-center">
+            <a href="home.html" target="_self" class="flex flex-col items-center transition-all duration-200 hover:scale-105">
+                <i class="fa-solid fa-house text-white"></i>
+                <p>início</p>
+            </a>
+        </div>
+        <div class="text-white flex flex-col items-center">
+            <a href="curso.html" target="_self" class="flex flex-col items-center transition-all duration-200 hover:scale-105">
+                <i class="fa-solid fa-school text-white"></i>
+                <p>meu curso</p>
+            </a>
+        </div>
+        <div class="text-white flex flex-col items-center">
+            <a href="../index.html" target="_self" class="flex flex-col items-center transition-all duration-200 hover:scale-105">
+                <i class="fa-solid fa-right-from-bracket text-white"></i>
+                <p>sair</p>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const disciplinasSemestre = [
+            { codigo: "DDI009", nome: "Ética Profissional e Patente", docente: "RAFAEL ALMEIDA BARROS" },
+            { codigo: "ESM100", nome: "Estágio Supervisionado em Desenvolvimento de Software Multiplataforma", docente: "RAFAELA MANZINI SPOLZINO" },
+            { codigo: "ISW039", nome: "Mineração de Dados", docente: "CARLOS EDUARDO SILVA MENDES" },
+            { codigo: "ISW035", nome: "Computação em Nuvem II", docente: "FERNANDA COSTA LIMA" },
+            { codigo: "IQS004", nome: "Qualidade e Testes de Software", docente: "BRUNO HENRIQUE SANTOS" },
+            { codigo: "ING088", nome: "Inglês IV", docente: "JULIANA PEREIRA ROCHA" },
+            { codigo: "ISW037", nome: "Processamento de Linguagem Natural", docente: "THIAGO RIBEIRO NUNES" }
+        ];
+
+        const lista = document.getElementById("listaNotas");
+
+        disciplinasSemestre.forEach(d => {
+            const card = document.createElement("a");
+            card.href = `notas_detalhe.html?codigo=${d.codigo}`;
+            card.className = "block border border-[#ccc] rounded-lg overflow-hidden bg-white transition-all duration-200 active:scale-[0.98] active:opacity-80 hover:shadow-md cursor-pointer";
+            card.innerHTML = `
+                <div class="bg-[#5D6B7C] text-white px-4 py-4">
+                    <p class="text-xs opacity-80">${d.codigo}</p>
+                    <p class="font-bold text-base leading-snug">${d.nome}</p>
+                    <p class="text-xs opacity-90 mt-1">${d.docente}</p>
+                </div>
+            `;
+            lista.appendChild(card);
+        });
+    </script>
+</body>
+</html>
